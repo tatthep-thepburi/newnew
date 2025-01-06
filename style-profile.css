@@ -1,0 +1,23 @@
+.detail  {
+    .name{
+        margin: 50 px ;     
+    }
+    
+    background-color: #ffffffaf;
+    color: rgb(85, 32, 14);
+    height: 500px ;
+    width:auto ;
+    margin: 10px 100px;
+
+    p {
+        padding: 10px;
+    }
+
+    .contact1 {
+        margin-left : 50px ;
+        color: rgb(85, 32, 14);
+        padding: 10px ;
+    }
+    
+    
+}

@@ -1,0 +1,3105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Active</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div class="act">
+        <div class="backpage">
+            <a href="index.html">Back to manu</a>
+        </div>
+       
+        <div class="skip">
+        <a href="#Monkey Book" >Monkey Book</a>
+        <a href="#Robot Arm" >Robot Arm</a>
+        </div>
+        
+    </div>
+    <div class="content">
+        
+        <div>
+            <a id="Monkey Book"></a>
+        </div><br><br>
+        <p class="name">Monkey Book</p>
+        <p><b>
+            ได้รับรางวัลระดับภูมิภาค NSC 2024 และได้รับการพิจารณารับทุนเพิ่ม มูลค่ารวม 10000 บาท
+          </b></p>
+        <p class="context">
+            หนังสือเรียนพี่ลิง (Monkey Book) โปรเจคนี้ผมและเพื่อนร่วมกันทำขึ้นมาเพื่อเป็นสื่อการสอนเกี่ยวกับ
+            การเคลื่อนที่แนวตรงประกอบไปด้วยการเคลื่อนที่แนวราบและการเคลื่อนที่แนวดิ่ง โดยจัดทำขึ้นมาใน
+           รูปแบบเกมเพื่อเพิ่มความน่าสนใจ จะกำหนดโจทย์โดยการสุ่มมากกว่า 200 ข้อ โดยแต่ละข้อจะกำหนด
+           ค่าต่างมาให้เช่น บอกความเร็วต้น ความเร่ง เวลา ให้หาระยะทาง โดยใช้สูตรพื้นฐานให้ผู้เรียนหาคำตอบ 
+           และในรูปแบบของการเคลื่อนที่แนวดิ่งจะเพิ่มแรงโน้มถ่วงจากดาวต่างๆ จะต้องเลือกใช้ตามที่โจทย์
+           กำหนด ซึ่งที่กล่าวมาจะมีเวลาให้ทำทั้งหมด 5 นาทีในการทำโจทย์เพื่อวัดว่าความสามารถของตนเอง
+        </p>
+        <p >
+            <b>บทนำ</b>
+        </p>
+        
+        <p>
+            โปรแกรมส่งเสริมการเรียนรู้ “หนังสือพี่ลิง” (Monkey Book) เป็นโปรแกรมสื่อส่งเสริมการเรียนรู้วิชา 
+ฟิสิกส์ ในรูปของเกมการเรียนรู้ จากโปรแกรม Processing มีวัตถุประสงค์ในการช่วยให้วิชาฟิสิกส์ที่เวลาเรียน
+ ในห้องที่คนส่วนใหญ่มาว่าน่าเบื่อ ยาก สูตรเยอะ ไม่อยากเรียนให้มีความสนใจในวิชามากขึ้นไม่มากก็น้อย เพื่อ
+ หวังว่าการเรียนวิชาฟิสิกส์ในครั้งถัด ๆ ไปจะไม่เป็นเพียงวิชาแต่ยังเพิ่มความสนุกตื่นเต้น ให้กับกลุ่มบุคคลที่นำ
+ โปรแกรมของคณะผู้จัดทำนี้ไปใช้ในการเรียนการสอน และยังสามารถนำไปพัฒนาต่อเพื่อเพิ่มองค์ประกอบ
+ อย่างอื่นเพื่อให้เหมาะสมในแต่ละวัยของผู้ใช้งาน ไม่ต้องกลัวไปว่าเราจะใช้แอปของเราไม่เป็นทางคณะผู้จัดทำ
+ ได้ทำการสร้างวิธีการใช้งานไว้ภายในโปรแกรมด้วย
+        </p>
+
+        <p>
+            โดยโปรแกรมส่งเสริมการเรียนรู้ “หนังสือพี่ลิง” (Monkey Book) มีการเล่นที่สนุกผนวกกับการใช้
+ ความคิดในการแก้โจทย์ปัญหาเพื่อช่วยพี่ลิงในการทำภารกิจให้เสร็จสำบูรณ์ โดยด่านหลัก ๆของพี่ลิงนั้นจะแบ่ง
+ ออกเป็น 2 ด่าน  หนึ่งด่านแรก คือ ด่านที่เราจะช่วยพี่ลิงในการส่งของให้ถึงบ้านลูกค้า โดยไม่ผิดบ้านหรือเลย
+ บ้านลูกค้า วิธีการที่เราจะช่วยพี่ลิงนั้นคือเราจะต้องช่วยพี่ลิงในการคำนวณระยะทาง ความเร็ว ความเร่ง เวลา 
+ว่าบ้านลูกค้าอยู่ตรงไหนและทำการปรับให้พี่ลิงของเรานั้นไปส่งยังบ้านลูกค้าให้ถูกต้อง โดยที่ในแต่ละข้อนั้นเรา
+ จะมีการให้ข้อมูลของ ความเร็ว ความเร่ง เวลา ระยะทางมา และจะมีตัวแปรหนึ่งที่หายไปเราจึงจะต้องนำข้อมูล
+ ที่ได้มาเลือกว่าเราจะใช้สูตรไหน โดยจะมีปุ่มให้กดทางด้านขวามือมาคิดการเคลื่อนที่ในแนวตรง เพื่อหาค่าที่
+ หายแล้วนำไปใส่ให้ถูกต้อง แต่ถ้าเราคิดว่าโจทย์ข้อนี้ยากไปเราก็มีการทำปุ่มโจทย์ใหม่ให้เพื่อที่จะหาโจทย์ที่เรา
+ ถนัด ซึ่งถ้าเราคิดถูกต้องพี่ลิงของเราก็จะนำของไปส่งได้อย่างถูกเป้าหมายและไม่โดนว่า แต่ถ้าเราคิดผิดพี่ลิง
+ ของเราจะทำการส่งของให้ผิดบ้านและโดนลูกค้าว่า ภายในเกมของเราจะมีการจำเวลาและนับแต้มว่าเราช่วยพี่
+ ลิงส่งของอย่างถูกต้องแล้วไปกี่ชิ้นบ้าง ถ้าคิดว่าเรายังทำได้ไม่ดีพอก็มีปุ่มที่สารถกลับไปเล่นอีกครั้งได้ แล้วโจทย์
+ ของเราจะไม่ซ้ำกันเพื่อความท้าทายของผู้เล่น ด่านที่สอง คือด่านที่พี่ลิงของเรามีภารกิจไปทำในดาวประหลาด
+ ต่าง ๆ เพื่อทำการปลูกต้นไม้ให้ดาวนั้น ๆ โดยที่พี่ลิงของเรานั้นก็จะเป็นนักบินอวกาศขับยานเพื่อไปทำภารกิจ
+ โดยที่ภารกิจนี้จะต่างจากภารกิจแรก จากพี่ลิงจะไปส่งของพี่ลิงของเราจะไปเป็นนักบินอวกาศ โดยคอนเซ็ป
+ หลักของด่านที่สองคือดาวแต่ละดาวจะมีแรงโน้มถ่วงเข้ามาเกี่ยวข้อง และแต่ละดาวนั้นค่าแรงโน้มถ่างก็จะไป
+ เท่ากันอีก สูตรที่ใช้ก็จะเปลี่ยนไป ไปใช้สูตรในการเคลื่อนที่แนวดิ่งแทน ซึ่งจะมีความท้าทายมากโดยที่ค่า a ของ
+ เราที่ใช้ในสูตรการเคลื่อนที่แนวตรงจะไม่มี จะมีค่า g หรือค่าแรงโน้มถ่วงเข้ามาแทน และใบ้ว่าค่าแรงโน้มถ่วง
+ ของแต่ละดาวนั้นจะไม่เหมือนกันพี่ลิงก็จะมีการไปปลูกต้นไม้ในหลาย ๆ ดาว วิธีการเล่น เราก็จะต้องเลือกว่าเรา
+ จะเล่นโจทย์แนวดิ่ง แล้วพี่ลิงของเราก็จะไปพร้อมยานอวกาศโดยที่ โจทย์จะอยู่บนซ้าย และมีปุ่มที่ให้เลือกสูตร 
+ปุ่มให้ใส่ตัวแปรรอเราอยู่ ถ้าใครไม่รู้ค่าแรงโน้มถ่วงปุ่มด้านขวาของเราก็มีบอก เมื่อเราทำการคิดและปรับตัว
+ แปรเสร็จแล้ว ถ้าคำตอบถูกต้องพี่ลิงของเราก็จะยิงทำการหย่อนเมล็ดต้นไม้ลงไป แล้วถ้าออกมาเป็นต้นไม้ประหลาดสีม่วง ๆที่พร้อมกินคนแสดงว่าคิดผิด แต่ถ้าต้นไม้นั้นโตมาสีฟ้า ที่มีลักษณะคล้ายต้นกล้วยแสดงว่าเรา
+ คิดถูก ซึ่งก็จะมีแต้มสะสมจนจบเกม เราก็ยังสามารถกดปุ่มทำโจทย์ใหม่ได้ พร้อมกับเริ่มเล่นเกมใหม่อีกครั้ง โดย
+ ทั้งสองด่านนี้เราสามารถทำการเลือกได้ว่าจะเล่นอันไหนและทำแต้มไปเท่าไหร่ เพื่อบูรณาการความรู้ทางฟิสิกส์
+ ว่าเรามีความรู้แค่ไหนและเข้าใจโจทย์บ้างหรือเปล่า ใช้สูตรผิดมั้ยคิดเลขผิดตรงไหนเปล่า และนำข้อผิดพลาดที่
+ ได้นำไปพัฒนาตัวเองต่อไป เพื่อให้ผู้ที่เข้ามาเล่นได้มีความสุขกับวิชาฟิสิกส์และได้นำความรู้กลับไปใช้ต่อใน
+ ห้องเรียน
+        </p>
+
+        <p>
+            
+โปรแกรมที่ใช้พัฒนา Processing 4 เป็นโปรแกรมที่ใช้ในการเขียนโค้ดทั้งหมดในโครงงานหนังสือพี่ลิง
+Procreate เป็นโปรแกรมที่ใช้ในการออกแบบสถานที่ องค์ประกอบต่าง ๆ รวมถึงพี่ลิงของเราด้วย
+        </p>
+        <div class="codeti">
+            Script (Processing 4)
+        </div>
+        <pre class="code">
+PImage play ;
+PImage help ;
+PImage credit;
+PImage backar;
+PImage car;
+PImage rocket;
+PImage homeBG;
+PImage name;
+PImage formula;
+
+boolean home = true ;
+boolean playwin = false ;
+boolean helpwin = false ;
+boolean creditwin = false ;
+boolean hor = false ;
+boolean ver = false ;
+
+PFont startfont ;
+
+int starwarname = -790 ;
+int starwarname1 = -720 ;
+int starwarname2 = -650 ;
+int starwarname3 = -580 ;
+int starwarname4 = -510 ;
+int starwarname5 = -440 ;
+int starwarname6 = -370 ;
+int starwarname7 = -300 ;
+int starwarname8 = -230 ;
+int starwarname9 = -160 ;
+int starwarname10 = -90 ;
+int starwarname11 = -20 ;
+int starwarname12 = 50 ;
+
+///hor
+PImage infor;
+//PImage car ;
+PImage driver ;
+PImage driverwindow ;
+PImage close ;
+PImage arrowdown ;
+PImage arrowup ;
+PImage arrowdown1 ;
+PImage arrowup1 ;
+PImage arrowdown2 ;
+PImage arrowup2 ;
+PImage correct ;
+PImage uncorrect ;
+PImage befordrive ;
+PImage reset ;
+PImage callopen ;
+PImage calldis ;
+PImage org ;
+PImage pink ;
+PImage bule ;
+PImage red ;
+PImage timeup ;
+
+/*int faster = 10 ;
+int slower = 10 ;*/
+
+int roadmove0 = 1000 ;
+int roadmove1 = 750 ;
+int roadmove2 = 500 ;
+int roadmove3 = 250 ;
+int roadmove4 = 0 ;
+
+
+int housemove0 = 900 ;
+int housemove1 = 600 ;
+int housemove2 = 300 ;
+int housemove3 = 0 ;
+
+
+int timer ;
+int sec ;
+
+//int u   ; // start speed
+//int v   ; // last speed
+int acc   ; // acceleration
+int tmax  ; // time max
+int smax ; // distance max
+
+int ut  ; // start speed type
+int vt   ; // last speed type
+int acct   ; // acceleration type
+int tmaxt  ; // time max type
+int smaxt ; // distance max type
+
+int check ; 
+int checkt ; 
+int checkC ; 
+
+int score = 0 ; // start speed
+
+int carmove = 10 ; 
+
+float randomQ ; // random solotion
+float randomQl ; // random question
+float randomNum ; //random number
+
+//int randomQ ;
+
+PFont font ;
+
+boolean drivermode = false ;
+boolean setting = false ;
+boolean go = false ;
+boolean nou = false ;
+boolean nov = false ;
+boolean noa = false ;
+boolean nog = false ;
+boolean nos = false ;
+boolean not = false ;
+//boolean callect = true ;
+//boolean fast = false ;
+//boolean slow = false ;
+boolean Qlock = false ;
+boolean timeloop = false ;
+boolean scorep = false ;
+boolean callwindow = false ;
+
+boolean motion = false ;
+
+//correct motion
+PImage bad ;
+PImage good ;
+PImage box ;
+PImage caremty ;
+PImage dance ;
+PImage walk ;
+PImage house ;
+PImage guest ;
+PImage worng ;
+
+boolean move = true ;
+
+int movex = 750 ;
+int movey = 300 ;
+int jump = 200 ;
+
+///ver
+int u ; // start speed
+int v ; // last speed
+int g ; // acceleration
+int t ; // time max
+int s ; // distance max
+
+int uC ; // start speed
+int vC ; // last speed
+int gC ; // acceleration
+int tC ; // time max
+int sC ; // distance max
+
+int seeddrop = -50 ;
+
+PImage star ;
+
+PImage ju ;
+PImage ea ;
+PImage moon ;
+PImage pl ;
+PImage juBG ;
+PImage eBG ;
+PImage moonBG ;
+PImage plBG ;
+
+PImage base ;
+PImage base1 ;
+PImage onbase ;
+PImage seed ;
+PImage tree ;
+PImage wrong ;
+
+boolean location = false ;
+boolean fire = false ;
+
+boolean motion1 = false ;
+
+float randomS ;
+
+void setup(){
+size(1000,600);
+play = loadImage("play.png");
+help = loadImage("help.png");
+credit = loadImage("credit.png");
+backar = loadImage("backar.png");
+homeBG = loadImage("homeBG.png");
+name = loadImage("name.png");
+formula = loadImage("formula.png");
+
+///hor
+infor = loadImage("infor.png");
+car = loadImage("car.png");
+driver = loadImage("driver.png");
+driverwindow = loadImage("driverwindow.png");
+close = loadImage("close.png");
+arrowdown = loadImage("arrowdown.png");
+arrowup = loadImage("arrowup.png");
+arrowdown1 = loadImage("arrowdown1.png");
+arrowup1 = loadImage("arrowup1.png");
+arrowdown2 = loadImage("arrowdown2.png");
+arrowup2 = loadImage("arrowup2.png");
+correct = loadImage("correct.png");
+uncorrect = loadImage("uncorrect.png");
+befordrive = loadImage("befordrive.png");
+reset = loadImage("reset.png");
+callopen = loadImage("callopen.png");
+calldis = loadImage("calldis.png");
+red = loadImage("red.png");
+org = loadImage("org.png");
+pink = loadImage("pink.png");
+bule = loadImage("bule.png");
+timeup = loadImage("timeup.png");
+bad = loadImage("bad.png");
+good = loadImage("good.png");
+box = loadImage("box.png");
+caremty = loadImage("caremty.png");
+dance = loadImage("dance.png");
+walk = loadImage("walk.png");
+house = loadImage("house.png");
+guest = loadImage("guest.png");
+worng = loadImage("worng.png");
+
+///ver
+rocket = loadImage("rocket.png");
+star = loadImage("star.png");
+ju = loadImage("jupiter.png");
+ea = loadImage("earth.png");
+moon = loadImage("moon.png");
+plBG = loadImage("plBG.png");
+juBG = loadImage("juBG.png");
+eBG = loadImage("eBG.png");
+moonBG = loadImage("moonBG.png");
+pl = loadImage("pluto.png");
+timeup = loadImage("timeup.png");
+rocket = loadImage("rocket.png");
+callopen = loadImage("callopen.png");
+calldis = loadImage("calldis.png");
+base = loadImage("base.png");
+base1 = loadImage("base1.png");
+onbase = loadImage("onbase.png");
+seed = loadImage("seed.png");
+tree = loadImage("tree.png");
+wrong = loadImage("wrong.png");
+
+smooth();
+startfont = loadFont("CenturyGothic-BoldItalic-50.vlw");
+textFont(startfont);
+
+}
+
+void draw(){
+   textSize(50);
+  fill(255);
+if(home == true){  
+//rect(0,0,1000,600);
+image(homeBG,0,0,1000,600);
+image(name,190,0,650,300);
+image(play,365,200,270,110);
+//rect(365,200,270,100);
+image(help,400,320,200,80);
+//rect(400,320,200,70);
+image(credit,405,350,200,150);
+//rect(405,400,200,60);
+}
+
+if(playwin == true){
+  fill(#C5FACA);
+  rect(0,0,1000,600);
+  fill(0);
+  image(backar,-10,-10,100,100);
+  image(car,150,200,250,200);
+  text("Horizontal",200,450);
+  image(rocket,550,200,250,220);
+  text("Vertical",610,450);
+
+}
+
+if(helpwin == true){
+  fill(#FFFFAA);
+  rect(0,0,1000,600);
+  fill(0);
+  text("- Left click to play",50,120);
+  text("- Formula",600,120);
+  text("- Variable",50,170);
+  textSize(30);
+  text("U as initial speed ",100,220);
+  text("V as final speed ",100,270);
+  text("T as time ",100,320);
+  text("S as distance ",100,370);
+  text("A as acceleration (Acceleration in Horizontal) ",100,420);
+  text("G as gravity (Acceleration in Vertical)",100,470);
+  image(backar,-10,-10,100,100);
+  image(formula,600,150,350,300);
+
+}
+if(creditwin == true){
+  fill(#FFAAAA);
+  rect(0,0,1000,600);
+  image(backar,-10,-10,100,100);
+  if(starwarname <= 650 ){
+  starwarname += 2 ; //starwarname = starwarname + 2 ; 
+  }
+  if(starwarname >= 650 ){
+  starwarname = -300 ;
+  }
+  if(starwarname1 <= 650 ){
+  starwarname1 += 2 ;
+  }
+  if(starwarname1 >= 650 ){
+  starwarname1 = -300 ;
+  }
+  if(starwarname2 <= 650 ){
+  starwarname2 += 2 ;
+  }
+  if(starwarname2 >= 650 ){
+  starwarname2 = -300 ;
+  }
+  if(starwarname3 <= 650 ){
+  starwarname3 += 2 ;
+  }
+  if(starwarname3 >= 650 ){
+  starwarname3 = -300 ;
+  }
+  if(starwarname4 <= 650 ){
+  starwarname4 += 2 ;
+  }
+  if(starwarname4 >= 650 ){
+  starwarname4 = -300 ;
+  }
+  if(starwarname5 <= 650 ){
+  starwarname5 += 2 ;
+  }
+  if(starwarname5 >= 650 ){
+  starwarname5 = -300 ;
+  }
+  if(starwarname6 <= 650 ){
+  starwarname6 += 2 ;
+  }
+  if(starwarname6 >= 650 ){
+  starwarname6 = -300 ;
+  }
+  if(starwarname7 <= 650 ){
+  starwarname7 += 2 ;
+  }
+  if(starwarname7 >= 650 ){
+  starwarname7 = -300 ;
+  }
+  if(starwarname8 <= 650 ){
+  starwarname8 += 2 ;
+  }
+  if(starwarname8 >= 650 ){
+  starwarname8 = -300 ;
+  }
+  if(starwarname9 <= 650 ){
+  starwarname9 += 2 ;
+  }
+  if(starwarname9 >= 650 ){
+  starwarname9 = -300 ;
+  }
+  if(starwarname10 <= 650 ){
+  starwarname10 += 2 ;
+  }
+  if(starwarname10 >= 650 ){
+  starwarname10 = -300 ;
+  }
+  if(starwarname11 <= 650 ){
+  starwarname11 += 2 ;
+  }
+  if(starwarname11 >= 650 ){
+  starwarname11 = -300 ;
+  }
+  if(starwarname12 <= 650 ){
+  starwarname12 += 2 ;
+  }
+  if(starwarname12 >= 650 ){
+  starwarname12 = -300 ;
+  }
+  
+  fill(0);
+  text("-- Advisor",200,starwarname);//
+  text("Akesit",200,starwarname1);
+  text("Chanintarapum",500,starwarname1);
+  text("-- Supervisor",200,starwarname2);//
+  text("Phudit",200,starwarname3);
+  text("Simthong",500,starwarname3);
+  text("-- Team  Members",200,starwarname4);//
+  text("Tatthep",200,starwarname5);
+  text("Thepburi",500,starwarname5);
+  text("Jirapas",200,starwarname6);
+  text("Sudsakron",500,starwarname6);
+  text("--Drawing  Department",200,starwarname7);//
+  text("Thayuthi",200,starwarname8);
+  text("Ngamjitd",500,starwarname8);
+  text("Kimhun",200,starwarname9);
+  text("Saehow",500,starwarname9);
+  text("-- Translation  Department",200,starwarname10);//
+  text("Nipoon",200,starwarname11);
+  text("Metsut",500,starwarname11);
+  text("Somchai",200,starwarname12);
+  text("Jalearnsakprong",500,starwarname12);
+  
+}
+
+///hor
+if(hor == true){
+background(#34ABB9);
+
+//image(red,housemove6,310,150,150) ;
+//image(three,housemove7,310,150,150) ;
+
+
+
+fill(#463B37);
+rect(0,500,1100,610) ;
+fill(#6EAF25);
+rect(0,400,1100,100) ;
+fill(#FFFFE8);
+rect(roadmove0,540,200,15) ;
+rect(roadmove1,540,200,15) ;
+rect(roadmove2,540,200,15) ;
+rect(roadmove3,540,200,15) ;
+rect(roadmove4,540,200,15) ;
+image(pink,housemove0,240,300,300) ;
+image(bule,housemove1,220,320,320) ;
+image(red,housemove2,205,320,320) ;
+image(org,housemove3,200,320,320) ;
+
+
+//image(car,900,400,300,250) ; //10
+
+image(car,carmove,400,300,250) ; //10
+
+ fill(255);
+textSize (50);
+if(timeloop == false){
+ textSize (50);
+  text ("time " + 300 + " s" , 719 , 80 ) ;
+}
+
+/*if(score>-1 && score<=9){
+  textSize (50);
+  text ("score " + score , 719 , 130 ) ;
+}
+if(score>9 && score<=99){
+  textSize (50);
+  text ("score " + score , 691 , 130 ) ;
+}
+if(score>99){
+  textSize (50);
+  text ("score " + score , 663 , 130 ) ;
+}*/
+//text ("score " + score  , 519 , 130 ) ;
+
+if( nou == false && nov == false && noa == false && nos == false && not == false ){
+  image(befordrive,660,20,300,300) ;
+  go = false ;
+}
+if(setting == true){
+  image(driverwindow,20,100,730,350) ;
+  //close icon
+ image(close,10,220,80,80) ;
+text ("U",125,220) ;
+text ("V",250,220) ;
+//image(correct,330,320,100,100) ;
+text ("A",370,220) ;
+//image(correct,450,320,100,100) ;
+text ("S",480,220) ;
+//image(correct,570,320,100,100) ;
+text ("T",600,220) ;
+
+if(nou == true){
+  image(uncorrect,90,320,100,100) ; 
+}
+else if(nou == false){
+  image(correct,90,320,100,100) ;
+}
+ 
+if(nov == true){
+  
+  image(uncorrect,210,320,100,100) ;
+  
+}
+else if(nov == false){
+  image(correct,210,320,100,100) ;
+}
+ 
+if(noa == true){
+  image(uncorrect,330,320,100,100) ;
+  
+}
+else if(noa == false){
+  image(correct,330,320,100,100) ;
+}
+if(nos == true){
+  image(uncorrect,450,320,100,100) ;  
+}
+else if(nos == false){
+  image(correct,450,320,100,100) ;
+}
+if(not == true){
+  image(uncorrect,570,320,100,100) ;
+  
+}
+else if(not == false){
+  image(correct,570,320,100,100) ;
+}
+}
+if(go == false){
+ 
+  if(Qlock == false){
+  randomQ = random(0,5); // formular
+  randomQl = random(0,4); // to find
+  randomNum = random(0,10);
+  if(randomNum>0 && randomNum<1){
+    v = 20 ;
+    u = 0 ;
+    acc = 4 ;
+    tmax = 5 ;
+    smax = 50 ;
+  }
+   if(randomNum>1 && randomNum<2){
+    v = 40 ;
+    u = 20 ;
+    acc = 3 ;
+    tmax = 10 ;
+    smax = 300 ;
+  }
+  if(randomNum>2 && randomNum<3){
+    v = 40 ;
+    u = 10 ;
+    acc = 3 ;
+    tmax = 10 ;
+    smax = 250 ;
+  }
+  if(randomNum>3 && randomNum<4){
+    v = 60 ;
+    u = 30 ;
+    acc = 2 ;
+    tmax = 15 ;
+    smax = 675 ;
+  }
+  if(randomNum>4 && randomNum<5){
+    v = 30 ;
+    u = 10 ;
+    acc = 5 ;
+    tmax = 4 ;
+    smax = 80 ;
+  }
+  if(randomNum>5 && randomNum<6){
+    v = 13 ;
+    u = 5 ;
+    acc = 1 ;
+    tmax = 8 ;
+    smax = 72 ;
+  }
+  if(randomNum>6 && randomNum<7){
+    v = 20 ;
+    u = 6 ;
+    acc = 2 ;
+    tmax = 7 ;
+    smax = 91 ;
+  }
+  if(randomNum>7 && randomNum<8){
+    v = 28 ;
+    u = 0 ;
+    acc = 2 ;
+    tmax = 14 ;
+    smax = 196 ;
+  }
+  if(randomNum>8 && randomNum<9){
+    v = 60 ;
+    u = 12 ;
+    acc = 3 ;
+    tmax = 16 ;
+    smax = 576 ;
+  }
+  if(randomNum>9 && randomNum<10){
+    v = 42 ;
+    u = 22 ;
+    acc = 4 ;
+    tmax = 5 ;
+    smax = 160 ;
+  }
+ }
+/* text (randomNum, 519 , 100 ) ;
+ text (randomQ, 519 , 150 ) ;
+ text (randomQl, 519 , 200 ) ;*/
+}
+if(go == true){
+  
+  timeloop = true ;
+  if(roadmove0 >= -250){
+   roadmove0 = roadmove0 - 10 ;
+ }
+ if(roadmove1 >= -250){
+   roadmove1 = roadmove1 - 10  ;
+ }
+ if(roadmove2 >= -250){
+   roadmove2 = roadmove2 - 10 ;
+ }
+ if(roadmove3 >= -250){
+   roadmove3 = roadmove3 - 10 ;
+ }
+ if(roadmove4 >= -250){
+   roadmove4 = roadmove4 - 10 ;
+ }
+ 
+ if(roadmove0 <= -250){
+   roadmove0 = 1000 ;
+ }
+ if(roadmove1 <= -250){
+   roadmove1 = 1000  ;
+ }
+ if(roadmove2 <= -250){
+   roadmove2 = 1000 ;
+ }
+ if(roadmove3 <= -250){
+   roadmove3 = 1000 ;
+ }
+ if(roadmove4 <= -250){
+   roadmove4 = 1000 ;
+ }
+ 
+ if(carmove < 900){
+ carmove += 5 ;
+ }
+ if(carmove >= 900){
+ motion = true ;
+ }
+ 
+ 
+ if(housemove0 >= -250){
+   housemove0 = housemove0 - 10 ;
+ }
+ if(housemove1 >= -250){
+   housemove1 = housemove1 - 10 ;
+ }
+ if(housemove2 >= -250){
+   housemove2 = housemove2 - 10 ;
+ }
+ if(housemove3 >= -250){
+   housemove3 = housemove3 - 10 ;
+ }
+
+ if(housemove0 <= -250){
+   housemove0 = 1000 ;
+ }
+ if(housemove1 <= -250){
+   housemove1 = 1000 ;
+ }
+ if(housemove2 <= -250){
+   housemove2 = 1000 ;
+ }
+ if(housemove3 <= -250){
+   housemove3 = 1000 ;
+ }
+ 
+if(nou == true){
+  
+check = v*tmax-acc*tmax*tmax/2 ;
+checkt = vt*tmaxt-acct*tmaxt*tmaxt/2 ;
+
+
+if(checkt > check){
+
+scorep = false ;
+}
+if(checkt < check){
+
+scorep = false ;
+}
+if(checkt == check){
+
+//score ++ ;
+scorep = true ;
+
+}
+
+ }
+if(nos == true){
+
+check = u + (acc * tmax) ;
+checkt = ut + (acct * tmaxt) ;
+
+ if(checkt > check){
+scorep = false ;
+}
+if(checkt < check){
+scorep = false ;
+}
+if(checkt == check){
+//score ++ ;
+scorep = true ;
+}
+
+}
+  
+if(noa == true){
+
+check = (u+v)/2 * tmax ;
+checkt = (ut+vt)/2 * tmaxt ;
+ 
+ if(checkt > check){
+scorep = false ;
+}
+if(checkt < check){
+scorep = false ;
+}
+if(checkt == check){
+//score ++ ;
+scorep = true ;
+
+}
+
+ }
+ 
+ if(not == true){
+
+check = ((v*v)-(u*u))/(2*acc) ;
+checkt = ((vt*vt)-(ut*ut))/(2*acct) ;
+
+ if(checkt > check){
+scorep = false ;
+}
+if(checkt < check){
+scorep = false ;
+}
+if( checkt == check ){
+//score ++ ;
+scorep = true ;
+
+}
+//text (smax , 400 , 260 ) ;
+
+ }
+ 
+ if(nov == true){
+
+check = u * tmax + ( acc * tmax * tmax ) / 2 ;
+checkt = ut * tmaxt + ( acct * tmaxt * tmaxt ) / 2 ;
+
+ 
+ if(checkt > check){
+scorep = false ;
+}
+if(checkt < check){
+scorep = false ;
+}
+if( checkt == check ){
+//score ++ ;
+scorep = true ;
+}
+
+ }
+ 
+} // go == ture
+
+ if (drivermode == true){
+ //rect(100,100,100,100);
+ image(driverwindow,20,50,730,400) ;
+ //close icon
+ image(close,10,220,80,80) ;
+text ("+1 " , 315 , 150 ) ;
+text ("+10 " , 405 , 150 ) ;
+text ("+100 " , 500 , 150 ) ;
+ if(nou == false){
+ //u
+ //String U = nf(uC,3,2);
+ image(arrowup,300,160,50,50) ;
+ image(arrowdown,350,160,50,50) ;
+ image(arrowup1,400,160,50,50) ;
+ image(arrowdown1,450,160,50,50) ;
+ image(arrowup2,500,160,50,50) ;
+ image(arrowdown2,550,160,50,50) ;
+ text ("U " , 150 , 200 ) ;
+ text ( ut , 200 , 200 ) ;
+
+ /*text ("U " + gC , 114 , 250 ) ;
+ text ("U " + gC , 114 , 300 ) ;
+ text ("U " + gC , 114 , 350 ) ;
+ text ("U " + gC , 114 , 400 ) ;*/
+ //text ( U , 133 , 324 ) ;
+
+ }
+ if(nov == false){
+ //v
+ //String V = nf(vC,3,2);
+ image(arrowdown,350,210,50,50) ;
+ image(arrowup,300,210,50,50) ;
+ image(arrowup1,400,210,50,50) ;
+ image(arrowdown1,450,210,50,50) ;
+ image(arrowup2,500,210,50,50) ;
+ image(arrowdown2,550,210,50,50) ;
+  text ("V " , 150 , 250 ) ;
+  text ( vt , 200 , 250 ) ;
+  //text ( V , 235 , 324 ) ;
+ }
+ if(noa == false){
+ //a
+ //String G = nf(gC,2,2);
+ image(arrowdown,350,260,50,50) ;
+ image(arrowup,300,260,50,50) ;
+ image(arrowup1,400,260,50,50) ;
+ image(arrowdown1,450,260,50,50) ;
+ image(arrowup2,500,260,50,50) ;
+ image(arrowdown2,550,260,50,50) ;
+  text ("A " , 150 , 300 ) ;
+  text ( acct , 200 , 300 ) ;
+  //text ( G , 365 , 324 ) ;
+//  G = int(gC);
+ }
+ if(nos == false){
+ //s
+ //String S = nf(sC,3,2);
+ image(arrowdown,350,310,50,50) ;
+ image(arrowup,300,310,50,50) ;
+image(arrowup1,400,310,50,50) ;
+ image(arrowdown1,450,310,50,50) ;
+ image(arrowup2,500,310,50,50) ;
+ image(arrowdown2,550,310,50,50) ;
+  text ("S " , 150 , 350 ) ;
+  text ( smaxt , 200 , 350 ) ;
+  //text ( S , 495 , 324 ) ;
+//  S = int(sC);
+ }
+ if(not == false){
+ //t
+ //String T = nf(tC,3,2);
+ image(arrowdown,350,360,50,50) ;
+ image(arrowup,300,360,50,50) ;
+ image(arrowup1,400,360,50,50) ;
+ image(arrowdown1,450,360,50,50) ;
+ image(arrowup2,500,360,50,50) ;
+ image(arrowdown2,550,360,50,50) ;
+  text ("T ", 150 , 400 ) ;
+  text ( tmaxt , 200 , 400 ) ;
+  //text ( T , 625, 324 ) ;
+//  T = int(tC);
+ }
+
+
+ }// drivermode == true
+ if(callwindow == false){
+ image(callopen,0,20,70,70) ;
+ }
+ if(callwindow == true){
+
+rect(20,20,600,80);
+//test
+ textSize(20);
+ fill(0);
+  image(calldis,620,20,70,70) ;
+Qlock = true ;
+
+ 
+  //randomQ = random(0,5);
+  //randomQl = random(0,4);
+  
+  if(randomQ>0 && randomQ<1){ // nou
+   
+    if(randomQl>0 && randomQl<1){ //find s
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, when driving with a rate of acceleration "+acc+" m/s^2 and a final",30,60);
+       text("equivalent to "+v+" m/s. Find the distance that the delivery company will take.",30,80);
+    }
+    if(randomQl>1 && randomQl<2){ //find v
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, when driving with a rate of acceleration "+acc+" m/s^2 and a final",30,60);
+       text("covering total distance of "+smax+" meters. Find the final speed of the delivery truck",30,80);
+    }
+    if(randomQl>2 && randomQl<3){ //find t
+       text("A delivery company Monkey Express drives a truck to deliver bananas  ",30,40);
+       text("with a rate of acceleration "+acc+" m/s^2 and a final speed equivalent to "+v+" m/s. ",30,60);
+       text("Find the total time it takes to travel"+smax+" meters.",30,80);
+    }
+    if(randomQl>3 && randomQl<4){ //find a
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, they cover a total distance of "+smax+" meters. ",30,60);
+       text("The final speed is "+v+" m/s. Find the acceleration rate of the delivery truck.",30,80);
+    }
+  }
+   if(randomQ>1 && randomQ<2){//nos
+     if(randomQl>0 && randomQl<1){ //find u
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, if they drive with an acceleration rate of "+acc+" m/s^2 and ",30,60);
+       text("final speed of "+v+" m/s. Find the initial speed of the delivery truck.",30,80);
+    }
+    if(randomQl>1 && randomQl<2){ //find v
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, if they drive with an acceleration rate of "+acc+" m/s^2 and ",30,60);
+       text("initial speed of "+u+" m/s. Find the final speed of the delivery truck.",30,80);
+    }
+    if(randomQl>2 && randomQl<3){ //find t
+       text("A delivery company Monkey Express drives a truck to deliver bananas with ",30,40);
+       text("with an acceleration rate of "+acc+" m/s^2, initial speed of "+u+" m/s, and final speed",30,60);
+       text("of "+v+" m/s. Find the time it takes to travel.",30,80);
+    }
+    if(randomQl>3 && randomQl<4){ //find a
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, it has an initial speed of "+u+" m/s  and final speed of "+v+" m/s.",30,60);
+       text("Find the acceleration rate of the delivery truck.",30,80);
+    }
+    
+  }
+  if(randomQ>2 && randomQ<3){//nov
+    if(randomQl>0 && randomQl<1){ //find u
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, to travel "+smax+" meters, if the truck travels with an acceleration",30,60);
+       text("rate of "+acc+" m/s^2. Find the initial speed of the delivery truck.",30,80);
+    }
+    if(randomQl>1 && randomQl<2){ //find s
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, it has an initial speed of "+u+" m/s. If the truck travel",30,60);
+       text("with an acceleration rate of "+acc+" m/s^2. Find the distance the truck can travel.",30,80);
+    }
+    if(randomQl>2 && randomQl<3){ //find t
+       text("A delivery company Monkey Express drives a truck to deliver bananas whit ",30,40);
+       text("an initial speed of "+u+" m/s, when the truck travel with an acceleration rate ",30,60);
+       text("of "+acc+" m/s^2.Find the time it takes to travel "+smax+" meters.",30,80);
+    }
+    if(randomQl>3 && randomQl<4){ //find a
+       text("A delivery company Monkey Express drives a truck to deliver bananas while ",30,40);
+       text("taking "+tmax+" seconds, it has an initial speed of "+u+" m/s and can travel "+smax+" meters.",30,60);
+       text("Find the acceleration rate of the delivery truck.",30,80);
+    }
+    
+  }
+  if(randomQ>3 && randomQ<4){ //not
+    if(randomQl>0 && randomQl<1){ //find u
+       text("A delivery company Monkey Express drives a truck to deliver bananas with",30,40);
+       text(smax+" meters, if it travels with an acceleration of "+acc+" m/s^2 while having a final",30,60);
+       text("speed of "+v+" m/s. Find the initial speed of the delivery truck.",30,80);
+    }
+    if(randomQl>1 && randomQl<2){ //find s
+       text("A delivery company Monkey Express drives a truck to deliver bananas with",30,40);
+       text("an initial speed of "+u+" m/s and having a final speed of "+v+" m/s, If the truck",30,60);
+       text("has an acceleration rate of "+acc+" m/s^2. Find the distance the truck can travel.",30,80);
+    }
+    if(randomQl>2 && randomQl<3){ //find v
+       text("A delivery company Monkey Express drives a truck to deliver bananas with",30,40);
+       text(smax+" meters, if it travels with an acceleration of "+acc+" m/s^2 while having a initial ",30,60);
+       text("speed of "+u+" m/s. Find the final speed of the delivery truck.",30,80);
+    }
+    if(randomQl>3 && randomQl<4){ //find a
+       text("A delivery company Monkey Express drives a truck to deliver bananas with",30,40);
+       text(smax+" meters,it has an initial speed of "+u+" m/s and a final speed of "+v+" m/s.",30,60);
+       text("Find the acceleration rate of the delivery truck.",30,80);
+    }
+    
+  }
+  if(randomQ>4 && randomQ<5){//noa
+    if(randomQl>0 && randomQl<1){ //find u
+       text("A delivery company Monkey Express drives a truck to deliver bananas with",30,40);
+       text(smax+" meters, while taking "+tmax+" seconds and having a final speed of "+v+" m/s. Find",30,60);
+       text("the initial speed of the delivery truck.",30,80);
+    }
+    if(randomQl>1 && randomQl<2){ //find s
+       text("A delivery company Monkey Express drives a truck to deliver bananas with",30,40);
+       text("an initial speed of "+u+" m/s and final speed of "+v+" m/s while taking ",30,60);
+       text(tmax+" seconds. Find the distance the delivery truck can travel.",30,80);
+    }
+    if(randomQl>2 && randomQl<3){ //find v
+       text("A delivery company Monkey Express drives a truck to deliver bananas with",30,40);
+       text(smax+" meters, meters and taking "+tmax+" seconds, if it has an initial speed of "+u+" m/s.",30,60);
+       text("Find the final speed of the delivery truck.",30,80);
+    }
+    if(randomQl>3 && randomQl<4){ //find t
+       text("A delivery company Monkey Express drives a truck to deliver bananas with",30,40);
+       text(smax+" meters, with an initial speed of "+u+" m/s and final speed of "+v+" m/s. Find the time ",30,60);
+       text("the truck takes to travel.",30,80);
+    }
+  }
+
+
+ }//callwindow == true
+ 
+ if(motion == true){
+ if(scorep == true){
+ //text("ture",500,400);
+ 
+fill(#463B37);
+rect(0,400,1100,610) ;
+fill(#6EAF25);
+rect(0,200,1100,200) ;
+image(house,300,-50,500,550);
+image(guest,300,200,180,250);
+if(move == true){
+image(walk,movex,movey,180,250);
+}
+image(caremty,600,300,600,450);
+//image(walk,450,200,180,250);
+ if(move == true){
+ if(movex > 450 ){
+ movex -= 2 ;
+ }
+ 
+ if(movex <= 450 ){
+ movex = 450 ;
+ }
+
+if(movey > 200 ){
+ movey -= 1 ;
+ }
+
+ if(movey <= 200 ){
+ movey = 200 ;
+ }
+ }
+  
+ if(movey <= 200 && movex <= 450 ){
+   move = false ;
+   image(dance,450,jump,180,250);
+   if(jump > 150){
+   jump -= 3 ;
+   }
+   if(jump <= 150){
+   jump = 200 ;
+   }
+   image(box,360,180,200,300);
+   image(good,360,100,200,300);
+
+ }
+ }//ture
+  if(scorep == false){
+ //text("false",500,400);
+
+fill(#463B37);
+rect(0,400,1100,610) ;
+fill(#6EAF25);
+rect(0,200,1100,200) ;
+image(house,300,-50,500,550);
+image(guest,300,200,180,250);
+if(move == true){
+image(walk,movex,movey,180,250);
+}
+image(caremty,600,300,600,450);
+//image(walk,450,200,180,250);
+ if(move == true){
+ if(movex > 450 ){
+ movex -= 2 ;
+ }
+ 
+ if(movex <= 450 ){
+ movex = 450 ;
+ }
+
+if(movey > 200 ){
+ movey -= 1 ;
+ }
+
+ if(movey <= 200 ){
+ movey = 200 ;
+ }
+ }
+  
+ if(movey <= 200 && movex <= 450 ){
+   move = false ;
+   image(worng,450,200,180,250);
+   
+   //image(box,360,180,200,300);
+   image(bad,360,100,200,300);
+
+ }
+ }//false
+ } // motion
+ if(motion == false){
+   movex = 750 ;
+  movey = 300 ;
+  jump = 200 ;
+ }
+   image(infor,900,150,100,100) ;
+  image(driver,900,250,100,100) ;
+  image(reset,900,350,100,100) ;
+  
+  if(timeloop == true){
+     fill(255);
+
+sec = sec + 1 ;
+timer = 300-sec/50 ;
+/*textSize (50);
+text ("time " + timer + " s" , 575 , 80 ) ;*/
+if(timer>-1 && timer<=9){
+  textSize (50);
+  text ("time " + timer + " s" , 775 , 80 ) ;
+}
+if(timer>9 && timer<=99){
+  textSize (50);
+  text ("time " + timer + " s" , 747 , 80 ) ;
+}
+if(timer>99){
+  textSize (50);
+  text ("time " + timer + " s" , 719 , 80 ) ;
+}
+if(timer <= 0){
+image(timeup,320,000,450,400) ;
+timer = 0 ;
+}
+
+}
+image(backar,-10,100,100,100);
+}//hor
+///ver
+if(ver == true){
+background(0);
+
+fill(#FFFFFF);
+//image(sim,50,200,200,200) ;
+//image(err,50,200,250,300) ;
+
+if(gC == 25){
+image(juBG,0,0,1000,600) ;
+}
+if(gC == 10){
+image(eBG,0,0,1000,600) ;
+}
+if(gC == 2){
+image(moonBG,0,0,1000,600) ;
+}
+if(gC == 1){
+image(plBG,0,0,1000,600) ;
+}
+if(motion1 == false){
+image(rocket,350,100,250,220) ;
+}
+
+if(timeloop == false){
+ textSize (50);
+  text ("time " + 300 + " s" , 719 , 80 ) ;
+}
+
+if( nou == false && nov == false && nog == false && nos == false && not == false ){
+  image(befordrive,660,20,300,300) ;
+  fire = false;
+}
+
+if(setting == true){
+  image(driverwindow,20,200,730,350) ;
+  //close icon
+ image(close,10,220,80,80) ;
+ 
+
+
+text ("U",125,320) ;
+text ("V",250,320) ;
+text ("G",370,320) ;
+text ("S",480,320) ;
+text ("T",600,320) ;
+if(nou == true){
+  image(uncorrect,90,420,100,100) ;
+}
+else if(nou == false){
+  image(correct,90,420,100,100) ;
+}
+if(nov == true){
+  image(uncorrect,210,420,100,100) ;
+}
+else if(nov == false){
+  image(correct,210,420,100,100) ;
+}
+
+if(nos == true){
+  image(uncorrect,450,420,100,100) ;  
+}
+else if(nos == false){
+  image(correct,450,420,100,100) ;
+}
+if(not == true){
+  image(uncorrect,570,420,100,100) ;
+}
+else if(not == false){
+  image(correct,570,420,100,100) ;
+}
+
+
+}
+
+if(fire == false){
+ 
+  if(Qlock == false){
+  randomS = random(0,4);
+  randomQ = random(0,4);
+  randomQl = random(0,3);
+  randomNum = random(0,5);
+  
+  if(randomS>0 && randomS<1 ){
+    g=25;
+    if(randomNum>0 && randomNum<1){
+    u = 10 ;
+    t = 16 ;
+    v = 410 ;
+    s = 3360 ;
+    }
+    if(randomNum>1 && randomNum<2){
+    u = 28 ;
+    t = 12 ;
+    v = 328 ;
+    s = 2136 ;
+    }
+    if(randomNum>2 && randomNum<3){
+    u = 30 ;
+    t = 20 ;
+    v = 530 ;
+    s = 5600 ;
+    }
+    if(randomNum>3 && randomNum<4){
+    u = 74 ;
+    t = 8 ;
+    v = 274 ;
+    s = 1392 ;
+    }
+    if(randomNum>4 && randomNum<5){
+    u = 80 ;
+    t = 8 ;
+    v = 280 ;
+    s = 1440 ;
+    }
+  }
+  if(randomS>1 && randomS<2 ){
+    g=10;
+    if(randomNum>0 && randomNum<1){
+    u = 0 ;
+    t = 10 ;
+    v = 100 ;
+    s = 500 ;
+    }
+    if(randomNum>1 && randomNum<2){
+    u = 60 ;
+    t = 5 ;
+    v = 110 ;
+    s = 425 ;
+    }
+    if(randomNum>2 && randomNum<3){
+    u = 25 ;
+    t = 8 ;
+    v = 105 ;
+    s = 520 ;
+    }
+    if(randomNum>3 && randomNum<4){
+    u = 30 ;
+    t = 6 ;
+    v = 90 ;
+    s = 360 ;
+    }
+    if(randomNum>4 && randomNum<5){
+    u = 75 ;
+    t = 4 ;
+    v = 115 ;
+    s = 380 ;
+    }
+  }
+  if(randomS>2 && randomS<3 ){
+    g=2;
+    if(randomNum>0 && randomNum<1){
+    u = 0 ;
+    t = 12 ;
+    v = 24 ;
+    s = 144 ;
+    }
+    if(randomNum>1 && randomNum<2){
+    u = 15 ;
+    t = 25 ;
+    v = 65 ;
+    s = 1000 ;
+    }
+    if(randomNum>2 && randomNum<3){
+    u = 35 ;
+    t = 10 ;
+    v = 55 ;
+    s = 450 ;
+    }
+    if(randomNum>3 && randomNum<4){
+    u = 60 ;
+    t = 20 ;
+    v = 100 ;
+    s = 1600 ;
+    }
+    if(randomNum>4 && randomNum<5){
+    u = 70 ;
+    t = 8 ;
+    v = 86 ;
+    s = 624 ;
+    }
+  }
+  if(randomS>3 && randomS<4 ){
+    g=1;
+    if(randomNum>0 && randomNum<1){
+    u = 0 ;
+    t = 12 ;
+    v = 24 ;
+    s = 144 ;
+    }
+    if(randomNum>1 && randomNum<2){
+    u = 20 ;
+    t = 24 ;
+    v = 44 ;
+    s = 768 ;
+    }
+    if(randomNum>2 && randomNum<3){
+    u = 32 ;
+    t = 18 ;
+    v = 50 ;
+    s = 738 ;
+    }
+    if(randomNum>3 && randomNum<4){
+    u = 60 ;
+    t = 10 ;
+    v = 70 ;
+    s = 650 ;
+    }
+    if(randomNum>4 && randomNum<5){
+    u = 45 ;
+    t = 14 ;
+    v = 59 ;
+    s = 728 ;
+    }
+  }
+  
+  }
+}
+
+if(fire == true){
+  
+  timeloop = true ;
+ 
+ 
+if(nou == true){
+  
+check = v*t-g*t*t/2 ;
+checkC = vC*tC-gC*tC*tC/2 ;
+
+
+if(checkC > check){
+
+scorep = false ;
+}
+if(checkC < check){
+
+scorep = false ;
+}
+if(checkC == check){
+
+//score ++ ;
+scorep = true ;
+
+}
+
+ }
+if(nos == true){
+
+check = u + (g * t) ;
+checkC = uC + (gC * tC) ;
+
+ if(checkC > check){
+scorep = false ;
+}
+if(checkC < check){
+scorep = false ;
+}
+if(checkC == check){
+//score ++ ;
+scorep = true ;
+}
+
+}
+  
+ 
+ if(not == true){
+
+check = ((v*v)-(u*u))/(2*g) ;
+checkC = ((vC*vC)-(uC*uC))/(2*gC) ;
+
+ if(checkC > check){
+scorep = false ;
+}
+if(checkC < check){
+scorep = false ;
+}
+if( checkC == check ){
+//score ++ ;
+scorep = true ;
+
+}
+//text (smax , 400 , 260 ) ;
+
+ }
+ 
+ if(nov == true){
+
+check = u * t + ( g * t * t ) / 2 ;
+checkC = uC * tC + ( gC * tC * tC ) / 2 ;
+
+ 
+ if(checkC > check){
+scorep = false ;
+}
+if(checkC < check){
+scorep = false ;
+}
+if( checkC == check ){
+//score ++ ;
+scorep = true ;
+}
+
+ }
+ 
+ motion1 = true ;
+ 
+} //fire
+
+ if (drivermode == true){
+ //rect(100,100,100,100);
+ image(driverwindow,20,150,730,400) ;
+ //close icon
+ image(close,10,220,80,80) ;
+ text ("+1 " , 315 , 250 ) ;
+text ("+10 " , 405 , 250 ) ;
+text ("+100 " , 500 , 250 ) ;
+ 
+ //textSize(35);
+
+
+ if(nou == false){
+ //u
+ 
+ image(arrowup,300,260,50,50) ;
+ image(arrowdown,350,260,50,50) ;
+ image(arrowup1,400,260,50,50) ;
+ image(arrowdown1,450,260,50,50) ;
+ image(arrowup2,500,260,50,50) ;
+ image(arrowdown2,550,260,50,50) ;
+ text ("U " + uC , 150 , 300 ) ;
+
+ /*text ("U " + gC , 114 , 250 ) ;
+ text ("U " + gC , 114 , 300 ) ;
+ text ("U " + gC , 114 , 350 ) ;
+ text ("U " + gC , 114 , 400 ) ;*/
+ //text ( U , 133 , 324 ) ;
+
+ }
+ if(nov == false){
+ //v
+ 
+ image(arrowdown,350,310,50,50) ;
+ image(arrowup,300,310,50,50) ;
+ image(arrowup1,400,310,50,50) ;
+ image(arrowdown1,450,310,50,50) ;
+ image(arrowup2,500,310,50,50) ;
+ image(arrowdown2,550,310,50,50) ;
+  text ("V " + vC , 150 , 350 ) ;
+  //text ( V , 235 , 324 ) ;
+ }
+ if(nog == false){
+ //a
+ 
+ /*image(arrowdown,350,260,50,50) ;
+ image(arrowup,300,260,50,50) ;
+ image(arrowup1,400,260,50,50) ;
+ image(arrowdown1,450,260,50,50) ;
+ image(arrowup2,500,260,50,50) ;
+ image(arrowdown2,550,260,50,50) ;*/
+  text ("G " + gC , 150 , 400 ) ;
+  //text ( G , 365 , 324 ) ;
+//  G = int(gC);
+ }
+ if(nos == false){
+ //s
+ image(arrowdown,350,410,50,50) ;
+ image(arrowup,300,410,50,50) ;
+image(arrowup1,400,410,50,50) ;
+ image(arrowdown1,450,410,50,50) ;
+ image(arrowup2,500,410,50,50) ;
+ image(arrowdown2,550,410,50,50) ;
+  text ("S " + sC , 150 , 450 ) ;
+  //text ( S , 495 , 324 ) ;
+//  S = int(sC);
+ }
+ if(not == false){
+ //t
+
+ image(arrowdown,350,460,50,50) ;
+ image(arrowup,300,460,50,50) ;
+ image(arrowup1,400,460,50,50) ;
+ image(arrowdown1,450,460,50,50) ;
+ image(arrowup2,500,460,50,50) ;
+ image(arrowdown2,550,460,50,50) ;
+  text ("T " + tC , 150 , 500 ) ;
+  //text ( T , 625, 324 ) ;
+//  T = int(tC);
+ }
+ 
+ 
+
+ 
+ }
+ 
+ if(location == true){
+ //rect(100,100,100,100);
+ image(driverwindow,20,200,730,350) ;
+ //close icon
+ image(close,10,220,80,80) ;
+ textSize(30);
+ image(ju,120,250,180,200) ;
+ text ("Jupiter " , 170 , 480 ) ;
+ image(ea,340,300,100,120) ;
+ text ("Earth " , 355 , 480 ) ;
+ image(moon,475,330,60,80) ;
+ text ("Moom " , 465 , 480 ) ;
+ image(pl,600,350,40,50) ;
+ text ("Pluto " , 590 , 480 ) ;
+ }
+ if(location == false){
+ textSize(50);
+ }
+ 
+  if(callwindow == false){
+ image(callopen,0,20,70,70) ;
+ fill(#FFFFFF);
+ }
+ if(callwindow == true){
+
+rect(20,20,620,100);
+//test
+ textSize(20);
+ fill(0);
+  image(calldis,620,20,70,70) ;
+  Qlock = true ;
+  if(randomS >0 && randomS<1  ){//jupiter
+  if(randomQ>0 && randomQ<1){ // nou
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot   ",30,60);
+  text("then releasing the magical banana seed with a duration of " +t+ " seconds and final",30,80);
+  text("speed of " +v+" m/s. How far is the spaceship from the plant pot?  ",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find v
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" metre high with a duration of " +t,30,80);
+  text("seconds. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" metre high with a final speed of ",30,80);
+  text(v+" m/s. How long does the magical banana seed takes to reach the plant pot?",30,100);
+       
+      }
+      
+  }
+  if(randomQ>1 && randomQ<2){ // nos
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and final ",30,80);
+  text("speed of "+v+" m/s. What is the initial speed of the magical banana seed?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find v
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and initial ",30,80);
+  text("speed of "+u+" m/s. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with an initial speed of "+u+" m/s and final ",30,80);
+  text("speed of "+v+" m/s. How long does the magical banana seed takes to reach the ",30,100);
+  text("plant pot?",30,120);
+       
+      }
+      
+  } 
+  if(randomQ>2 && randomQ<3){ // nov
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and initial ",30,80);
+  text("speed of "+u+" m/s. How far is the spaceship from the plant pot?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find u
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a duration of "+t,30,80);
+  text("seconds. What is the initial speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with an initial speed ",30,80);
+  text("of "+u+" m/s. How long does the magical banana seed takes to reach the plant pot?",30,100);
+       
+      }
+      
+  }
+  if(randomQ>3 && randomQ<4){ // not
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with an initial speed of "+u+" m/s and final ",30,80);
+  text("speed of "+v+" m/s. How far is the spaceship from the plant pot?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find u
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a final speed of ",30,80);
+  text(v+" m/s. What is the initial speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find v
+  text("A delivery company MonkeyExpress is travelling to Jupiter via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a initial speed of ",30,80);
+  text(u+" m/s. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      
+  }
+  }//jupiter
+  if(randomS >1 && randomS<2  ){//earth
+  if(randomQ>0 && randomQ<1){ // nou
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot   ",30,60);
+  text("then releasing the magical banana seed with a duration of " +t+ " seconds and final",30,80);
+  text("speed of " +v+" m/s. How far is the spaceship from the plant pot?  ",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find v
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" metre high with a duration of " +t,30,80);
+  text("seconds. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" metre high with a final speed of ",30,80);
+  text(v+" m/s. How long does the magical banana seed takes to reach the plant pot?",30,100);
+       
+      }
+      
+  }
+  if(randomQ>1 && randomQ<2){ // nos
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and final ",30,80);
+  text("speed of "+v+" m/s. What is the initial speed of the magical banana seed?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find v
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and initial ",30,80);
+  text("speed of"+u+" m/s. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with an initial speed of "+u+" m/s and final ",30,80);
+  text("speed of "+v+" m/s. How long does the magical banana seed takes to reach the ",30,100);
+  text("plant pot?",30,120);
+       
+      }
+      
+  } 
+  if(randomQ>2 && randomQ<3){ // nov
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and initial ",30,80);
+  text("speed of "+u+" m/s. How far is the spaceship from the plant pot?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find u
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a duration of "+t,30,80);
+  text("seconds. What is the initial speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with an initial speed ",30,80);
+  text("of "+u+" m/s. How long does the magical banana seed takes to reach the plant pot?",30,100);
+       
+      }
+      
+  }
+  if(randomQ>3 && randomQ<4){ // not
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with an initial speed of "+u+" m/s and final ",30,80);
+  text("speed of "+v+" m/s. How far is the spaceship from the plant pot?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find u
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a final speed of ",30,80);
+  text(v+" m/s. What is the initial speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find v
+  text("A delivery company MonkeyExpress is travelling to Earth via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a initial speed of ",30,80);
+  text(u+" m/s. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      
+  }
+  }//earth  
+  if(randomS >2 && randomS<3  ){//Moon
+  if(randomQ>0 && randomQ<1){ // nou
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot   ",30,60);
+  text("then releasing the magical banana seed with a duration of " +t+ " seconds and final",30,80);
+  text("speed of " +v+" m/s. How far is the spaceship from the plant pot?  ",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find v
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" metre high with a duration of " +t,30,80);
+  text("seconds. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" metre high with a final speed of ",30,80);
+  text(v+" m/s. How long does the magical banana seed takes to reach the plant pot?",30,100);
+       
+      }
+      
+  }
+  if(randomQ>1 && randomQ<2){ // nos
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and final ",30,80);
+  text("speed of "+v+" m/s. What is the initial speed of the magical banana seed?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find v
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and initial ",30,80);
+  text("speed of"+u+" m/s. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with an initial speed of "+u+" m/s and final ",30,80);
+  text("speed of "+v+" m/s. How long does the magical banana seed takes to reach the ",30,100);
+  text("plant pot?",30,120);
+       
+      }
+      
+  } 
+  if(randomQ>2 && randomQ<3){ // nov
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and initial ",30,80);
+  text("speed of "+u+" m/s. How far is the spaceship from the plant pot?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find u
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a duration of "+t,30,80);
+  text("seconds. What is the initial speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with an initial speed ",30,80);
+  text("of "+u+" m/s. How long does the magical banana seed takes to reach the plant pot?",30,100);
+       
+      }
+      
+  }
+  if(randomQ>3 && randomQ<4){ // not
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with an initial speed of "+u+" m/s and final ",30,80);
+  text("speed of "+v+" m/s. How far is the spaceship from the plant pot?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find u
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a final speed of ",30,80);
+  text(v+" m/s. What is the initial speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find v
+  text("A delivery company MonkeyExpress is travelling to Moon via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a initial speed of ",30,80);
+  text(u+" m/s. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      
+  }
+  }//Moon
+  if(randomS >3 && randomS<4  ){//Pluto
+  if(randomQ>0 && randomQ<1){ // nou
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot   ",30,60);
+  text("then releasing the magical banana seed with a duration of " +t+ " seconds and final",30,80);
+  text("speed of " +v+" m/s. How far is the spaceship from the plant pot?  ",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find v
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" metre high with a duration of " +t,30,80);
+  text("seconds. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" metre high with a final speed of ",30,80);
+  text(v+" m/s. How long does the magical banana seed takes to reach the plant pot?",30,100);
+       
+      }
+      
+  }
+  if(randomQ>1 && randomQ<2){ // nos
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and final ",30,80);
+  text("speed of "+v+" m/s. What is the initial speed of the magical banana seed?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find v
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and initial ",30,80);
+  text("speed of"+u+" m/s. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with an initial speed of "+u+" m/s and final ",30,80);
+  text("speed of "+v+" m/s. How long does the magical banana seed takes to reach the ",30,100);
+  text("plant pot?",30,120);
+       
+      }
+      
+  } 
+  if(randomQ>2 && randomQ<3){ // nov
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with a duration of "+t+" seconds and initial ",30,80);
+  text("speed of "+u+" m/s. How far is the spaceship from the plant pot?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find u
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a duration of "+t,30,80);
+  text("seconds. What is the initial speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find t
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with an initial speed ",30,80);
+  text("of "+u+" m/s. How long does the magical banana seed takes to reach the plant pot?",30,100);
+       
+      }
+      
+  }
+  if(randomQ>3 && randomQ<4){ // not
+   
+    if(randomQl>0 && randomQl<1){ //find s
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to  ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed with an initial speed of "+u+" m/s and final ",30,80);
+  text("speed of "+v+" m/s. How far is the spaceship from the plant pot?",30,100);
+       }
+      if(randomQl>1 && randomQl<2){ //find u
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to   ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot  ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a final speed of ",30,80);
+  text(v+" m/s. What is the initial speed of the magical banana seed?",30,100);
+       
+      }
+      if(randomQl>2 && randomQl<3){ //find v
+  text("A delivery company MonkeyExpress is travelling to Pluto via a spaceship to ",30,40);
+  text("plant a magical banana tree. When arrived at the destination with a plant pot ",30,60);
+  text("then releasing the magical banana seed from "+s+" meter high with a initial speed of ",30,80);
+  text(u+" m/s. What is the final speed of the magical banana seed?",30,100);
+       
+      }
+      
+  }
+  }//Pluto  
+ }//callwindow == true
+
+  if(motion1 == true){
+    if(gC == 25){
+image(juBG,0,0,1000,600) ;
+}
+if(gC == 10){
+image(eBG,0,0,1000,600) ;
+}
+if(gC == 2){
+image(moonBG,0,0,1000,600) ;
+}
+if(gC == 1){
+image(plBG,0,0,1000,600) ;
+}
+ if(scorep == true){
+
+image(onbase,360,200,300,300);
+
+if(seeddrop <= 300){
+image(seed,425,seeddrop,170,240) ;
+}
+seeddrop += 5 ;
+image(rocket,350,-200,450,420) ;
+
+if(seeddrop >= 300 && seeddrop <= 500 ){
+image(base,360,200,300,300);
+
+}
+if(seeddrop >= 500 && seeddrop <= 600){
+image(base1,360,200,300,300);
+
+}
+if(seeddrop >= 600){
+image(tree,360,200,300,300);
+
+}
+ 
+
+ }//ture
+  if(scorep == false){
+ image(onbase,360,200,300,300);
+
+if(seeddrop <= 300){
+image(seed,425,seeddrop,170,240) ;
+}
+seeddrop += 5 ;
+image(rocket,350,-200,450,420) ;
+
+if(seeddrop >= 300 && seeddrop <= 500 ){
+image(base,360,200,300,300);
+
+}
+if(seeddrop >= 500 && seeddrop <= 600){
+image(base1,360,200,300,300);
+
+}
+if(seeddrop >= 600){
+image(wrong,360,200,300,300);
+
+}
+ }//false
+ } // motion
+ 
+ image(infor,900,150,100,100) ;
+  image(driver,900,250,100,100) ;
+  image(reset,900,450,100,100) ;
+  image(star,900,350,100,100) ;
+  
+  if(timeloop == true){
+    fill(#FFFFFF);
+sec = sec + 1 ;
+timer = 300-sec/50 ;
+/*textSize (50);
+text ("time " + timer + " s" , 575 , 80 ) ;*/
+if(timer>-1 && timer<=9){
+  textSize (50);
+  text ("time " + timer + " s" , 775 , 80 ) ;
+}
+if(timer>9 && timer<=99){
+  textSize (50);
+  text ("time " + timer + " s" , 747 , 80 ) ;
+}
+if(timer>99){
+  textSize (50);
+  text ("time " + timer + " s" , 719 , 80 ) ;
+}
+if(timer <= 0){
+image(timeup,320,000,450,400) ;
+timer = 0 ;
+}
+
+}
+image(backar,-10,100,100,100);
+}//ver
+} //draw
+
+void mouseClicked(){
+  
+  if(home == true){
+if(mouseX>365 && mouseY>200 && mouseX<635 && mouseY<300 )
+{
+  //text("play",10,10);
+  playwin = true ;
+  helpwin = false ;
+  creditwin = false ;
+  home = false ;
+}
+if(mouseX>400 && mouseY>320 && mouseX<600 && mouseY<390 )
+{
+ // text("help",10,10);
+  helpwin = true ;
+  creditwin = false ;
+  playwin = false ;
+  home = false ;
+}
+if(mouseX>405 && mouseY>400 && mouseX<605 && mouseY<460 )
+{
+  //text("credit",10,10);
+   creditwin = true ;
+   helpwin = false ;
+   playwin = false ;
+   home = false ;
+}
+  }
+if(mouseX>0 && mouseY>0 && mouseX<90 && mouseY<90 )
+{
+  //text("credit",10,10);
+  playwin = false ;
+   creditwin = false ;
+   helpwin = false ;
+   home = true ;
+}
+if(playwin == true){
+if(mouseX>150 && mouseY>200 && mouseX<400 && mouseY<400 )
+{
+  hor = true ;
+  ver = false ;
+  playwin = false ;
+  
+}
+
+if(mouseX>550 && mouseY>200 && mouseX<800 && mouseY<420 )
+{
+  ver = true ;
+  hor = false ;
+  playwin = false ;
+}
+}
+
+///hor
+if(hor == true){
+if(drivermode == true ){
+if(nou == false) {
+if(mouseX>300 && mouseY>160 && mouseX<350 && mouseY<210 )
+{
+ ut++ ;
+
+}
+if(mouseX>350 && mouseY>160 && mouseX<400 && mouseY<210)
+{
+ ut-- ;
+
+}
+
+if(mouseX>400 && mouseY>160 && mouseX<450 && mouseY<210 )
+{
+ ut += 10 ;
+
+}
+if(mouseX>450 && mouseY>160 && mouseX<500 && mouseY<210)
+{
+ ut -= 10 ;
+
+}
+
+if(mouseX>500 && mouseY>160 && mouseX<550 && mouseY<210 )
+{
+ ut += 100 ;
+
+}
+if(mouseX>550 && mouseY>160 && mouseX<600 && mouseY<210)
+{
+ ut -= 100 ;
+
+}
+
+  }
+    if(nov == false) {
+   if(mouseX>300 && mouseY>210 && mouseX<350 && mouseY<260 )
+{
+ vt++ ;
+
+}
+if(mouseX>350 && mouseY>210 && mouseX<400 && mouseY<260 )
+{
+ vt-- ;
+
+}
+
+if(mouseX>400 && mouseY>210 && mouseX<450 && mouseY<260 )
+{
+ vt += 10 ;
+
+}
+if(mouseX>450 && mouseY>210 && mouseX<500 && mouseY<260 )
+{
+ vt -= 10 ;
+
+}
+
+if(mouseX>500 && mouseY>210 && mouseX<550 && mouseY<260 )
+{
+ vt += 100 ;
+
+}
+if(mouseX>550 && mouseY>210 && mouseX<600 && mouseY<260 )
+{
+ vt -= 100 ;
+
+}
+    }
+  if(noa == false) {
+if(mouseX>300 && mouseY>260 && mouseX<350 && mouseY<310 )
+{
+ acct++ ;
+
+}
+if(mouseX>350 && mouseY>260 && mouseX<400 && mouseY<310)
+{
+ acct-- ;
+ if(acct<=0){
+   acct=0 ;
+   
+ }
+}
+
+if(mouseX>400 && mouseY>260 && mouseX<450 && mouseY<310 )
+{
+ acct += 10 ;
+
+}
+if(mouseX>450 && mouseY>260 && mouseX<500 && mouseY<310)
+{
+ acct -= 10 ;
+ if(acct<=0){
+   acct=0 ;
+   
+ }
+}
+
+if(mouseX>500 && mouseY>260 && mouseX<550 && mouseY<310 )
+{
+ acct += 100 ;
+
+}
+if(mouseX>550 && mouseY>260 && mouseX<600 && mouseY<310)
+{
+ acct -= 100 ;
+ if(acct<=0){
+   acct=0 ;
+   
+ }
+}
+
+  }
+  if(nos == false) {
+if(mouseX>300 && mouseY>310 && mouseX<350 && mouseY<360)
+{
+ smaxt++ ;
+
+}
+if(mouseX>350 && mouseY>310 && mouseX<400 && mouseY<360 )
+{
+ smaxt-- ;
+
+}
+
+if(mouseX>400 && mouseY>310 && mouseX<450 && mouseY<360)
+{
+ smaxt += 10 ;
+
+}
+if(mouseX>450 && mouseY>310 && mouseX<500 && mouseY<360 )
+{
+  smaxt -= 10 ;
+
+}
+
+if(mouseX>500 && mouseY>310 && mouseX<550 && mouseY<360)
+{
+ smaxt += 100 ;
+
+}
+if(mouseX>550 && mouseY>310 && mouseX<600 && mouseY<360 )
+{
+  smaxt -= 100 ;
+
+}
+  }
+  
+    if(not == false) {
+if(mouseX>300 && mouseY>360 && mouseX<350 && mouseY<410)
+{
+ tmaxt++ ;
+
+}
+if(mouseX>350 && mouseY>360 && mouseX<400 && mouseY<410)
+{
+ tmaxt-- ;
+ 
+}
+
+if(mouseX>400 && mouseY>360 && mouseX<450 && mouseY<410)
+{
+ tmaxt += 10 ;
+
+}
+if(mouseX>450 && mouseY>360 && mouseX<500 && mouseY<410)
+{
+ tmaxt -= 10 ;
+ 
+}
+
+if(mouseX>500 && mouseY>360 && mouseX<550 && mouseY<410)
+{
+ tmaxt += 100 ;
+
+}
+if(mouseX>550 && mouseY>360 && mouseX<600 && mouseY<410)
+{
+ tmaxt -= 100 ;
+ 
+}
+    }
+    
+  }
+ 
+  if(mouseX>10 && mouseY>400 && mouseX<310 && mouseY<650 )
+{
+  go = true ;
+  //motion = true ;
+}
+  
+if(mouseX>900 && mouseY>150 && mouseX<1000 && mouseY<250 )
+{
+  setting = true ;
+  drivermode = false ;
+}
+ if(mouseX>10 && mouseY>220 && mouseX<90 && mouseY<300 )
+{
+ setting = false ;
+ drivermode = false ;
+}
+if(mouseX>900 && mouseY>250 && mouseX<1000 && mouseY<350 )
+{
+ drivermode = true ;
+ setting = false ;
+}
+if(setting == true){
+ if(mouseX>90 && mouseY>320 && mouseX<190 && mouseY<420 )
+{
+ nou = true ;
+ nov = false ;
+ noa = false ;
+ nos = false ;
+ not = false ;
+
+}
+if(mouseX>210 && mouseY>320 && mouseX<310 && mouseY<420 )
+{
+ nov = true ;
+ nou = false ;
+ noa = false ;
+ nos = false ;
+ not = false ;
+
+}
+if(mouseX>330 && mouseY>320 && mouseX<430 && mouseY<420 )
+{
+ noa = true ;
+ nou = false ;
+ nov = false ;
+ nos = false ;
+ not = false ;
+
+}
+if(mouseX>450 && mouseY>320 && mouseX<550 && mouseY<420 )
+{
+ nos = true ;
+ nou = false ;
+ nov = false ;
+ noa = false ;
+ not = false ;
+
+}
+if(mouseX>570 && mouseY>320 && mouseX<670 && mouseY<420 )
+{
+ not = true ;
+ nou = false ;
+ nov = false ;
+ noa = false ;
+ nos = false ;
+
+}
+}
+
+if(mouseX>900 && mouseY>350 && mouseX<1000 && mouseY<450 )
+{
+  go = false ;
+ roadmove0 = 1000 ;
+ roadmove1 = 750 ;
+ roadmove2 = 500 ;
+ roadmove3 = 250 ;
+ roadmove4 = 0 ;
+ housemove0 = 900 ;
+ housemove1 = 600 ;
+ housemove2 = 300 ;
+ housemove3 = 0 ;
+  Qlock = false ;
+  scorep = false ;
+  motion = false ;
+  movex = 750 ;
+  movey = 300 ;
+  jump = 200 ;
+  move = true ;
+  carmove = 10 ;
+  if(timer <= 0){
+  timer = 0 ;
+  sec = 0 ;
+  timeloop = false ;
+  }
+   
+
+}
+/*if(mouseX>0 && mouseY>20 && mouseX<70 && mouseY<90 )
+{
+ calllist = true ;
+
+}
+ if(calllist == true){
+ if(mouseX>0 && mouseY>20 && mouseX<70 && mouseY<90 )
+{
+ calllist = false ;
+
+}
+ }*/
+  if(mouseX>0 && mouseY>20 && mouseX<70 && mouseY<90){
+    callwindow = true ;
+  } 
+  if(mouseX>620 && mouseY>20 && mouseX<690 && mouseY<90){
+    callwindow = false ;
+  }
+  
+  if(mouseX>-10 && mouseY>100 && mouseX<90 && mouseY<200){
+    hor = false ;
+    
+    go = false ;
+
+ roadmove0 = 1000 ;
+ roadmove1 = 750 ;
+ roadmove2 = 500 ;
+ roadmove3 = 250 ;
+ roadmove4 = 0 ;
+ housemove0 = 900 ;
+ housemove1 = 600 ;
+ housemove2 = 300 ;
+ housemove3 = 0 ;
+  Qlock = false ;
+  scorep = false ;
+  motion = false ;
+  movex = 750 ;
+  movey = 300 ;
+  jump = 200 ;
+  move = true ;
+  carmove = 10 ;
+  if(timer <= 0){
+  timer = 0 ;
+  sec = 0 ;
+  timeloop = false ;
+  }
+  home = true ;
+  timer = 0 ;
+  timeloop = false ;
+  nou = false ;
+ nov = false ;
+ noa = false ;
+ nos = false ;
+ not = false ;
+  
+  }
+  
+  
+}//hor
+///ver
+if(ver == true){
+  if(mouseX>350 && mouseY>100 && mouseX<600 && mouseY<320 && setting == false && drivermode == false && location == false)
+{
+  fire = true ;
+}
+
+if(mouseX>900 && mouseY>150 && mouseX<1000 && mouseY<250 )
+{
+  setting = true ;
+  drivermode = false ;
+  location = false ;
+}
+ if(mouseX>10 && mouseY>220 && mouseX<90 && mouseY<300 )
+{
+ setting = false ;
+ drivermode = false ;
+ location = false ;
+}
+if(mouseX>900 && mouseY>250 && mouseX<1000 && mouseY<350 )
+{
+ drivermode = true ;
+ setting = false ;
+ location = false ;
+}
+if(mouseX>900 && mouseY>350 && mouseX<1000 && mouseY<450)
+{
+  location = true ;
+  setting = false ;
+  drivermode = false ;
+}
+
+if(setting == true){
+  
+
+ if(mouseX>90 && mouseY>420 && mouseX<190 && mouseY<520 )
+{
+ nou = true ;
+ nov = false ;
+ nog = false ;
+ nos = false ;
+ not = false ;
+
+}
+if(mouseX>210 && mouseY>420 && mouseX<310 && mouseY<520 )
+{
+ nov = true ;
+ nou = false ;
+ nog = false ;
+ nos = false ;
+ not = false ;
+
+}
+if(mouseX>330 && mouseY>420 && mouseX<430 && mouseY<520 )
+{
+ nog = true ;
+ nou = false ;
+ nov = false ;
+ nos = false ;
+ not = false ;
+
+}
+if(mouseX>450 && mouseY>420 && mouseX<550 && mouseY<520 )
+{
+ nos = true ;
+ nou = false ;
+ nov = false ;
+ nog = false ;
+ not = false ;
+
+}
+if(mouseX>570 && mouseY>420 && mouseX<670 && mouseY<520 )
+{
+ not = true ;
+ nou = false ;
+ nov = false ;
+ nog = false ;
+ nos = false ;
+
+}
+
+}
+
+if(drivermode == true ){
+ 
+
+  if(nou == false) {
+if(mouseX>300 && mouseY>260 && mouseX<350 && mouseY<310 )
+{
+ uC++ ;
+
+}
+if(mouseX>350 && mouseY>260 && mouseX<400 && mouseY<310)
+{
+ uC-- ;
+
+}
+  }
+    if(nov == false) {
+   if(mouseX>300 && mouseY>310 && mouseX<350 && mouseY<360 )
+{
+ vC++ ;
+
+}
+if(mouseX>350 && mouseY>310 && mouseX<400 && mouseY<360 )
+{
+ vC-- ;
+
+}
+    }
+  /*if(nog == false) {
+if(mouseX>330 && mouseY>130 && mouseX<450 && mouseY<230 )
+{
+ gC++ ;
+
+}
+if(mouseX>330 && mouseY>320 && mouseX<450 && mouseY<420)
+{
+ gC-- ;
+ if(gC<=0){
+   gC=0 ;
+   
+ }
+}
+  }*/
+  if(nos == false) {
+if(mouseX>300 && mouseY>410 && mouseX<350 && mouseY<460)
+{
+ sC++ ;
+
+}
+if(mouseX>350 && mouseY>410 && mouseX<400 && mouseY<460 )
+{
+ sC-- ;
+
+}
+  }
+    if(not == false) {
+if(mouseX>300 && mouseY>460 && mouseX<350 && mouseY<510)
+{
+ tC++ ;
+
+}
+if(mouseX>350 && mouseY>460 && mouseX<400 && mouseY<510)
+{
+ tC-- ;
+ 
+}
+    }
+    
+      if(nou == false) {
+if(mouseX>400 && mouseY>260 && mouseX<450 && mouseY<310 )
+{
+ uC += 10 ;
+
+}
+if(mouseX>450 && mouseY>260 && mouseX<500 && mouseY<310)
+{
+ uC -=10 ;
+
+}
+  }
+    if(nov == false) {
+   if(mouseX>400 && mouseY>310 && mouseX<450 && mouseY<360 )
+{
+ vC += 10 ;
+
+}
+if(mouseX>450 && mouseY>310 && mouseX<500 && mouseY<360 )
+{
+ vC -= 10 ;
+
+}
+    }
+     if(nos == false) {
+if(mouseX>400 && mouseY>410 && mouseX<450 && mouseY<460)
+{
+ sC += 10;
+
+}
+if(mouseX>450 && mouseY>410 && mouseX<500 && mouseY<460 )
+{
+  sC -= 10;
+
+}
+  }
+    if(not == false) {
+if(mouseX>400 && mouseY>460 && mouseX<450 && mouseY<510)
+{
+ tC += 10 ;
+
+}
+if(mouseX>450 && mouseY>460 && mouseX<500 && mouseY<510)
+{
+ tC -= 10 ;
+ 
+}
+    }
+ if(nou == false) {
+if(mouseX>500 && mouseY>260 && mouseX<550 && mouseY<310 )
+{
+ uC += 100 ;
+
+}
+if(mouseX>550 && mouseY>260 && mouseX<600 && mouseY<310)
+{
+ uC -= 100 ;
+
+}
+  }
+    if(nov == false) {
+   if(mouseX>500 && mouseY>310 && mouseX<550 && mouseY<360 )
+{
+ vC += 100 ;
+
+}
+if(mouseX>550 && mouseY>310 && mouseX<600 && mouseY<360 )
+{
+ vC -= 100 ;
+
+}
+    }
+     if(nos == false) {
+if(mouseX>500 && mouseY>410 && mouseX<550 && mouseY<460)
+{
+ sC += 100 ;
+
+}
+if(mouseX>550 && mouseY>410 && mouseX<600 && mouseY<460 )
+{
+  sC -= 100 ;
+
+}
+  }
+    if(not == false) {
+if(mouseX>500 && mouseY>460 && mouseX<550 && mouseY<510)
+{
+ tC += 100 ;
+
+}
+if(mouseX>550 && mouseY>460 && mouseX<600 && mouseY<510)
+{
+ tC -= 100 ;
+ 
+}
+    }
+    
+  }
+  
+
+if(location == true){
+  if(mouseX>130 && mouseY>250 && mouseX<330 && mouseY<450)
+  {
+     gC = 25 ;//24.79
+     
+ 
+  }
+  
+  if(mouseX>340 && mouseY>300 && mouseX<460 && mouseY<420)
+  {
+     gC = 10 ;//9.81
+     
+ 
+  }
+  
+   if(mouseX>475 && mouseY>330 && mouseX<855 && mouseY<410)
+  {
+     gC = 2 ;//1.62
+     
+ 
+  }
+  if(mouseX>600 && mouseY>350 && mouseX<650 && mouseY<400)
+  {
+     gC = 1 ;//1
+     
+ 
+  }
+}
+
+if(mouseX>20 && mouseY>450 && mouseX<120 && mouseY<520)
+  {
+     fire = true ;
+ 
+  }
+if(mouseX>0 && mouseY>20 && mouseX<70 && mouseY<90){
+    callwindow = true ;
+  } 
+if(mouseX>620 && mouseY>20 && mouseX<690 && mouseY<90){
+    callwindow = false ;
+  }
+if(mouseX>900 && mouseY>450 && mouseX<1000 && mouseY<550 )
+{
+  fire = false ;
+  Qlock = false ;
+  scorep = false ;
+  motion1 = false ;
+  seeddrop = -50 ;
+  if(timer <= 0){
+  timer = 0 ;
+  sec = 0 ;
+  timeloop = false ;
+  }
+
+}
+if(mouseX>-10 && mouseY>100 && mouseX<90 && mouseY<200){
+    ver = false ;
+    fire = false ;
+  Qlock = false ;
+  scorep = false ;
+  motion1 = false ;
+  seeddrop = -50 ;
+  if(timer <= 0){
+  timer = 0 ;
+  sec = 0 ;
+  timeloop = false ;
+  }
+  home = true ;
+  timer = 0 ;
+  timeloop = false ;
+  nou = false ;
+ nov = false ;
+
+ nos = false ;
+ not = false ;
+  }
+}//ver
+}
+    </pre>
+  </pre>
+  
+
+
+  
+  <a id="Robot Arm"></a>
+  <br><br>
+  <p class="name">Robot Arm</p>
+
+  <p>
+    แขนกล (Robot Arm) โปรเจคนี้ผมและเพื่อนทำขึ้นมาเพื่อ สร้างพื้นฐานในการรวมวิชาความรู้ด้าน
+    เครื่องกล ไฟฟ้า และการเขียนโค้ด ให้ประกอบออกมาเป็นชิ้นงาน โดยแขนกลนี้จะสั่งการผ่านบอร์ด
+    Arduino โดยใช้ปุ่มเป็นตัวควบคุมทั้งหมด โดยการขยับทีละข้อต่อ รวมไปถึงการใช้มือจับให้จับและปล่อย แล้วจะมีไฟสถานะบอกว่ากำลังควบคุมข้อต่อใดอยู่ สามารถยกวัตถุได้อย่างอิสระ
+  </p>
+  
+  <div class="Picti">
+    ตัวอย่างการต่อวงจร
+  </div>
+  
+  <div class="Picli">
+    .
+  </div>
+  
+  <div class="Sra">
+    <img src="img/RA.png" alt="">
+    
+  </div>
+
+  <div class="codeti">
+    ตัวอย่างการทำงานของโปรแกรม
+  </div>
+
+  <pre class="code">
+    #include <Servo.h> // include the Servo library
+
+      Servo shoulder ; // ไหล่
+      Servo arm ; // แขน
+      Servo wrist ; // ข้อมือ
+      Servo hand ; // มือ
+      
+      //ขาservo
+      int servo0_pin = 10 ; //ไหล่
+      int servo1_pin = 11 ; //แขน
+      int servo2_pin = 12 ; //ข้อมือ
+      int servo3_pin = 13 ; //มือ
+      
+      //ขาbotton
+      int botton0_pin = 0 ; // ปุ่มเลือกแขนเป้าหมาย
+      int botton1_pin = 1 ; // ปุ่มเพิ่มองศา
+      int botton2_pin = 2 ; // ปุ่มลดองศา
+      int botton3_pin = 3 ; // ปุ่มกางมือ
+      int botton4_pin = 4 ; // ปุ่มหุบมือ
+      int botton5_pin = 5 ; // ปุ่มเลียนแบบ
+      
+      //ขาLED
+      int LED0_pin = 6 ; // servo0
+      int LED1_pin = 7 ; // servo1
+      int LED2_pin = 8 ; // servo2
+      int LED3_pin = 9 ; // Copy
+      
+      int servoname = 0 ; // เลขประจำ servo เป้าหมาย
+      
+      int x = 90 ; 
+      int y = 45 ;
+      int z = 90 ; 
+      
+      int pos0  ; //ไหล่
+      int pos1  ; //แขน
+      int pos2  ; //ข้อแขน
+      int pos3 = 95 ; //มือ
+      
+      int cppos0 ; //ไหล่
+      int cppos1 ; //แขน
+      int cppos2 ; //ข้อแขน
+      int cppos3 ; //มือ
+      
+      int pos0p ; //ไหล่
+      int pos1p ; //แขน
+      int pos2p ; //ข้อแขน
+      
+      
+      int cppos0p ; //ไหล่
+      int cppos1p ; //แขน
+      int cppos2p ; //ข้อแขน
+      int cppos3p ; //มือ
+      
+      bool step1 ;
+      bool step2 ;
+      
+      bool work ;
+      
+      void setup() {
+        // put your setup code here, to run once:
+      
+        Serial.begin(9600); // 
+      
+        //กำหนดสถนะ pin
+      
+        pinMode(botton0_pin, INPUT_PULLUP);
+        pinMode(botton1_pin, INPUT_PULLUP);
+        pinMode(botton2_pin, INPUT_PULLUP);
+        pinMode(botton3_pin, INPUT_PULLUP);
+        pinMode(botton4_pin, INPUT_PULLUP);
+        pinMode(botton5_pin, INPUT_PULLUP);
+      
+        pinMode(LED0_pin, OUTPUT);
+        pinMode(LED2_pin, OUTPUT);
+        pinMode(LED1_pin, OUTPUT);
+        pinMode(LED3_pin, OUTPUT);
+      
+        shoulder.attach(servo0_pin);
+        arm.attach(servo1_pin);
+        wrist.attach(servo2_pin);
+        hand.attach(servo3_pin);
+      
+        step1 = true ;
+        step2 = false ;
+        work = false ;
+      
+        
+      
+      }
+      
+      void loop() {
+        // put your main code here, to run repeatedly:
+        Serial.print("servo : ");
+        Serial.println(servoname);
+        Serial.print("pos0 : ");
+        Serial.println(pos0);
+        Serial.print("pos1 : ");
+        Serial.println(pos1);
+        Serial.print("pos2 : ");
+        Serial.println(pos2);
+        Serial.print("pos3 : ");
+        Serial.println(pos3);
+        /*Serial.print("pos0p : ");
+        Serial.println(pos0p);
+        Serial.print("pos1p : ");
+        Serial.println(pos1p);
+        Serial.print("pos2p : ");
+        Serial.println(pos2p);
+        Serial.print("pos3p : ");
+        Serial.println(pos3);*/
+        
+        //ปุ่มเลือกแขน
+        if(digitalRead(botton0_pin) == 0){
+          delay(200);
+          while(digitalRead(botton0_pin) == 0){}
+          servoname++ ;
+          if( servoname > 2 ) {
+            servoname = 0 ;
+          }
+        }
+        //บังคับ Hand
+        if(digitalRead(botton3_pin) == 0) {
+            delay(200);
+            pos3 = 110 ;
+            if(pos3 >= 180){
+            pos3 = 180 ;
+            }
+            step1 = false ;
+            step2 = true ;
+            work = false ;
+          }
+          
+          else if(digitalRead(botton4_pin) == 0) {
+            delay(200);
+            pos3 = pos3 - 2 ;
+            if(pos3 <= 95){
+            pos3 = 95 ;
+            }
+          }
+        
+      //if(step1 == true){
+        pos0 = x ;
+        pos1 = y ;
+        pos2 = z ; 
+      
+        shoulder.write(pos0);
+        arm.write(pos1);
+        wrist.write(pos2);
+        hand.write(pos3);
+        
+        delay(200);
+        
+        //บังคับ shoulder
+        if(servoname == 0 ){
+          delay(100);
+      
+          digitalWrite(LED0_pin , 1 );
+          digitalWrite(LED1_pin , 0 );
+          digitalWrite(LED2_pin , 0 );
+          digitalWrite(LED3_pin , 0 );
+      
+          if(digitalRead(botton1_pin) == 0) {
+            delay(100);
+            x = x + 2 ;
+            if(x >= 180){
+            x = 180 ;
+            }
+          }
+          
+          else if(digitalRead(botton2_pin) == 0) {
+            delay(100);
+            x = x - 2 ;
+            if(x <= 0){
+            x = 0 ;
+            }
+          }
+        }
+      
+        //บังคับ arm
+        if(servoname == 1 ){
+          delay(100);
+      
+          digitalWrite(LED0_pin , 0 );
+          digitalWrite(LED1_pin , 1 );
+          digitalWrite(LED2_pin , 0 );
+          digitalWrite(LED3_pin , 0 );
+      
+          if(digitalRead(botton1_pin) == 0) {
+            delay(100);
+            y = y + 2 ;
+            if(y >= 180){
+            y = 180 ;
+            }
+          }
+          
+          else if(digitalRead(botton2_pin) == 0) {
+            delay(100);
+            y = y - 2 ;
+            if(y <= 0){
+            y = 0 ;
+            }
+          }
+        }
+      
+        //บังคับ wrist
+        if(servoname == 2 ){
+          delay(100);
+      
+          digitalWrite(LED0_pin , 0 );
+          digitalWrite(LED1_pin , 0 );
+          digitalWrite(LED2_pin , 1 );
+          digitalWrite(LED3_pin , 0 );
+      
+          if(digitalRead(botton1_pin) == 0) {
+            delay(100);
+            z = z + 2 ;
+            if(z >= 180){
+            z = 180 ;
+            }
+          }
+          
+          else if(digitalRead(botton2_pin) == 0) {
+            delay(100);
+            z = z - 2 ;
+            if(z <= 0){
+            z = 0 ;
+            }
+          }
+        }
+        
+      }
+  </pre>
+
+  <div class="codeli">
+    .
+  </div>
+
